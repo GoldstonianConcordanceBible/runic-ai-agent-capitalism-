@@ -1,0 +1,11 @@
+{
+  "version": "v0.1.0",
+  "characters": [
+    {
+      "character_id": "TEMPLATE_CHARACTER",
+      "name": "TEMPLATE_CHARACTER",
+      "status": "dormant",
+      "path": "characters/TEMPLATE_CHARACTER"
+    }
+  ]
+}
