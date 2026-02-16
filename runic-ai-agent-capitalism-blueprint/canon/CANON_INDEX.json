@@ -1,0 +1,24 @@
+{
+  "version": "v0.1.0",
+  "updated_utc": "TBD",
+  "lookup_order": [
+    "canonical_id",
+    "title",
+    "aliases",
+    "tags"
+  ],
+  "artifacts": [
+    {
+      "canonical_id": "BOOK_RUNIC_AAC",
+      "type": "book",
+      "title": "The Runic Consulting Guide to AI Agent Capitalism",
+      "aliases": ["Runic AI Agent Capitalism", "Runic AAC Guide"],
+      "status": "in_progress",
+      "paths": {
+        "manuscript_root": "manuscript/",
+        "blackbook_root": "blackbook/",
+        "canon_root": "canon/"
+      }
+    }
+  ]
+}
