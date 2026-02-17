@@ -1,0 +1,85 @@
+{
+  "chapter_id": "ch-06",
+  "title": "Authority, Permissions, and Fail-Closed Safety",
+  "version": "v0.1.3",
+  "core_principles": [
+    "Authority is policy; permissions are enforcement.",
+    "No silent expansion: scope changes require versioning and tests.",
+    "Start read-only and climb the permission ladder slowly.",
+    "Fail closed: uncertainty triggers refusal or escalation.",
+    "Compliance language gates protect the system in high-risk domains."
+  ],
+  "permission_ladder": [
+    {
+      "level": 0,
+      "name": "Read-only",
+      "capabilities": [
+        "Read canon",
+        "Draft outputs",
+        "Log results"
+      ]
+    },
+    {
+      "level": 1,
+      "name": "Suggest-only",
+      "capabilities": [
+        "Propose changes via drafts",
+        "Open issues (optional)",
+        "No merges",
+        "No deployments"
+      ]
+    },
+    {
+      "level": 2,
+      "name": "PR-only",
+      "capabilities": [
+        "Create pull requests",
+        "Cannot merge",
+        "Must pass CI checks"
+      ]
+    },
+    {
+      "level": 3,
+      "name": "Merge-with-approval",
+      "capabilities": [
+        "Can merge after human approval",
+        "Attestation required"
+      ]
+    },
+    {
+      "level": 4,
+      "name": "Autonomous execution",
+      "capabilities": [
+        "Narrow autonomous tasks only",
+        "Strict rollback",
+        "Monitoring",
+        "Kill switch required"
+      ]
+    }
+  ],
+  "fail_closed_modes": [
+    "Not found in canon.",
+    "INSUFFICIENT AUTHORITY — HUMAN REVIEW REQUIRED."
+  ],
+  "escalation_requirements": [
+    "State what the agent attempted.",
+    "List canon sources checked.",
+    "Identify what is missing.",
+    "Specify what decision is required."
+  ],
+  "governance_implications": [
+    "Capability changes require canon updates, tests, and version tags.",
+    "PR-only workflows reduce harm and preserve auditability.",
+    "Escalation events should be structured and logged."
+  ],
+  "agent_requirements": [
+    "Refuse when outside scope.",
+    "Use fail-closed responses when truth is missing.",
+    "Escalate with structured explanation.",
+    "Never provide financial advice or profit promises."
+  ],
+  "schema_impact": [
+    "Add schema for permission level configuration.",
+    "Add schema for escalation payload structure."
+  ]
+}
