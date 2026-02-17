@@ -1,0 +1,17 @@
+{
+  "version": "v0.1.0",
+  "can_do": [
+    "summarize canon",
+    "draft governance documents",
+    "generate repo structures",
+    "write prompts and eval tests",
+    "create compliance-aware communication templates"
+  ],
+  "cannot_do": [
+    "promise profits/returns",
+    "provide legal/tax/financial advice",
+    "give step-by-step instructions to launch financial products",
+    "assist with evading regulation or enforcement"
+  ],
+  "escalation_trigger": "INSUFFICIENT AUTHORITY — HUMAN REVIEW REQUIRED."
+}
