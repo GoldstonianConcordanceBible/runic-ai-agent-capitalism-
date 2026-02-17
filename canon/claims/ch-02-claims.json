@@ -1,0 +1,32 @@
+{
+  "chapter_id": "ch-02",
+  "title": "The Agent Stack",
+  "version": "v0.1.0",
+  "stack_layers": [
+    "Identity",
+    "Canon",
+    "Authority",
+    "Permissions",
+    "Tools",
+    "Memory",
+    "Policy",
+    "Accountability"
+  ],
+  "core_principles": [
+    "Agents are stacks, not prompts.",
+    "Authority boundaries prevent harm.",
+    "Logging creates trust.",
+    "Versioning turns content into infrastructure."
+  ],
+  "governance_implications": [
+    "Start with read-only permissions.",
+    "All changes must be versioned.",
+    "Escalation required outside scope."
+  ],
+  "agent_requirements": [
+    "Cite canonical sources.",
+    "No fabrication.",
+    "No financial or legal advice.",
+    "Log decisions."
+  ]
+}
