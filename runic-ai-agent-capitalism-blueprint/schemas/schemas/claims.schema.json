@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/claims.schema.json",
+  "title": "Chapter Claims Schema",
+  "type": "object",
+  "required": [
+    "chapter_id",
+    "title",
+    "version",
+    "core_principles",
+    "governance_implications",
+    "agent_requirements"
+  ],
+  "properties": {
+    "chapter_id": {
+      "type": "string",
+      "pattern": "^ch-\\d{2}$",
+      "description": "Chapter identifier in the form ch-01, ch-02, ..."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^v\\d+\\.\\d+\\.\\d+$",
+      "description": "SemVer tag string (e.g., v0.1.2)"
+    },
+    "core_principles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "governance_implications": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "agent_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+
+    "tiers_of_truth": {
+      "type": "array",
+      "description": "Optional: Chapter-defined tiering model (Tier 1/2/3).",
+      "items": {
+        "type": "object",
+        "required": ["tier", "name", "definition"],
+        "properties": {
+          "tier": { "type": "string", "minLength": 2 },
+          "name": { "type": "string", "minLength": 2 },
+          "definition": { "type": "string", "minLength": 5 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "required_canon_files": {
+      "type": "array",
+      "description": "Optional: Canon files required/introduced by the chapter.",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "doctrine_definition": {
+      "type": "string",
+      "description": "Optional: A chapter-specific definition of doctrine.",
+      "minLength": 5
+    },
+    "stack_layers": {
+      "type": "array",
+      "description": "Optional: The named layers in an agent stack.",
+      "items": {
+        "type": "string",
+        "minLength": 2
+      }
+    },
+    "deliverables": {
+      "type": "array",
+      "description": "Optional: Chapter deliverables (files, artifacts, outputs).",
+      "items": {
+        "type": "string",
+        "minLength": 2
+      }
+    },
+    "risks": {
+      "type": "array",
+      "description": "Optional: Chapter risks.",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "schema_impact": {
+      "type": "array",
+      "description": "Optional: Schema changes implied by chapter content.",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    }
+  },
+  "additionalProperties": false
+}
