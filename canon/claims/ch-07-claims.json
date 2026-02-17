@@ -1,0 +1,41 @@
+{
+  "chapter_id": "ch-07",
+  "title": "Provenance, Citations, and the Trust Engine",
+  "version": "v0.1.3",
+  "core_principles": [
+    "Trust is built from provenance signals, not persuasion.",
+    "Stable IDs prevent drift.",
+    "Version tags create immutable truth snapshots.",
+    "Changelogs and attestations create governance for truth.",
+    "Citations enforce honesty and reduce hallucination."
+  ],
+  "trust_signals": [
+    "Stable IDs (canonical_id, chapter_id, character_id)",
+    "Version tags (immutable snapshots)",
+    "Changelog discipline",
+    "Attestation logs",
+    "Citations with source paths and versions"
+  ],
+  "provenance_components": [
+    "Version tags",
+    "CHANGELOG.md entries",
+    "Attestation log entries",
+    "CITATION.cff metadata",
+    "Structured canonical IDs in CANON_INDEX.json"
+  ],
+  "governance_implications": [
+    "Major truth changes require attestations.",
+    "Version bumps must be documented in CHANGELOG.md.",
+    "Agent outputs should cite sources and versions."
+  ],
+  "agent_requirements": [
+    "Always cite canon paths when possible.",
+    "Include version tags when available.",
+    "If information is missing: respond 'Not found in canon.'",
+    "Label interpretive statements as commentary, not executable truth."
+  ],
+  "schema_impact": [
+    "Add schema for attestation log entries.",
+    "Add schema for citation metadata in agent outputs."
+  ]
+}
