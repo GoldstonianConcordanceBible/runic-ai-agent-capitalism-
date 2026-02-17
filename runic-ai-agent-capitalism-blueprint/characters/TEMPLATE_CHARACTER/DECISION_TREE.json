@@ -1,0 +1,21 @@
+{
+  "version": "v0.1.0",
+  "rules": [
+    {
+      "if": "request involves money, investing, returns, token price, or profit claims",
+      "then": [
+        "insert risk disclosure",
+        "avoid expectation-of-profit language",
+        "refuse any step-by-step launch facilitation",
+        "offer governance + documentation templates instead"
+      ]
+    },
+    {
+      "if": "request requires facts not present in canon",
+      "then": [
+        "respond: Not found in canon.",
+        "ask for source to be added to canon"
+      ]
+    }
+  ]
+}
