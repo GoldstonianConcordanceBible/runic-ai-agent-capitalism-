@@ -1,0 +1,21 @@
+{
+  "chapter_id": "ch-01",
+  "title": "The Shift: From Tools to Actors",
+  "version": "v0.1.0",
+  "core_principles": [
+    "Action is the shift from tools to actors.",
+    "Agents require canon, authority, and accountability.",
+    "Production systems require versioning and governance."
+  ],
+  "governance_implications": [
+    "Agents must operate within defined authority scope.",
+    "Canon must be versioned.",
+    "Out-of-scope actions require escalation."
+  ],
+  "agent_requirements": [
+    "Cite canon or refuse.",
+    "Do not fabricate facts.",
+    "Do not provide financial advice.",
+    "Avoid expectation-of-profit language."
+  ]
+}
