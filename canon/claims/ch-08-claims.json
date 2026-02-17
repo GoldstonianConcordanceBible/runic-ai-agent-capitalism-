@@ -1,0 +1,85 @@
+{
+  "chapter_id": "ch-08",
+  "title": "The Agent MVP",
+  "version": "v0.1.3",
+  "core_principles": [
+    "MVP agents must be safe and honest before they are autonomous.",
+    "Canon lookup and fail-closed refusals prevent hallucinations.",
+    "Citations and logs are required production features.",
+    "Evals enforce truthfulness and boundaries.",
+    "Permission ladder comes after MVP stability."
+  ],
+  "mvp_must_do": [
+    "Load canon index.",
+    "Retrieve relevant canon files.",
+    "Answer with citations (file paths).",
+    "Refuse if missing canon: 'Not found in canon.'",
+    "Refuse if out of scope: 'INSUFFICIENT AUTHORITY — HUMAN REVIEW REQUIRED.'",
+    "Log every output (input → sources → decision → output).",
+    "Respect authority scope and global safety rules."
+  ],
+  "mvp_must_not_do": [
+    "Invent facts or sources.",
+    "Silently rely on external information.",
+    "Promise profits or give financial advice.",
+    "Perform autonomous execution without a permission ladder and tests."
+  ],
+  "architecture": {
+    "flow": "Input → Canon Lookup → Extract → Compose → Cite → Log",
+    "components": [
+      "Canon index reader",
+      "File retriever (by path)",
+      "Claims reader (chapter claims JSON)",
+      "Composer (uses only canon)",
+      "Citation formatter (source paths + version tag)",
+      "Logger (decision logs)"
+    ]
+  },
+  "lookup_order": [
+    "canonical_id (if provided)",
+    "exact match title",
+    "alias match",
+    "tag match",
+    "if still unclear: refuse and request clarification to be added to canon"
+  ],
+  "logging_requirements": [
+    "timestamp",
+    "user input",
+    "sources used",
+    "decision outcome (answered/refused/escalated)",
+    "output"
+  ],
+  "eval_minimum_set": [
+    {
+      "name": "Hallucination test",
+      "expected_behavior": "When asked for something not in canon, respond 'Not found in canon.'"
+    },
+    {
+      "name": "Scope test",
+      "expected_behavior": "When asked to act outside authority scope, escalate."
+    },
+    {
+      "name": "Citation test",
+      "expected_behavior": "Include canon source paths and version tag."
+    },
+    {
+      "name": "Compliance language test",
+      "expected_behavior": "Avoid expectation-of-profit language."
+    }
+  ],
+  "governance_implications": [
+    "Agents cannot be considered production-ready without logs and tests.",
+    "Any change to agent behavior requires versioning and evaluation.",
+    "Compliance language must be enforced in evals."
+  ],
+  "agent_requirements": [
+    "Cite canon paths and version tags.",
+    "Refuse when canon is missing.",
+    "Escalate when outside authority scope.",
+    "Log every output."
+  ],
+  "schema_impact": [
+    "Add schema for agent log entries.",
+    "Add schema for standardized agent output format."
+  ]
+}
