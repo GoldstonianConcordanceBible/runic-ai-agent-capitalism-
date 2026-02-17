@@ -1,0 +1,50 @@
+{
+  "chapter_id": "ch-05",
+  "title": "The Character-to-Agent Standard",
+  "version": "v0.1.3",
+  "core_principles": [
+    "Narrative creates the character; canon makes the character executable.",
+    "Every character must follow the CCACS folder contract.",
+    "Doctrine and decision trees prevent drift.",
+    "Authority scope prevents capability creep.",
+    "Evals are the activation gate."
+  ],
+  "ccacs_folder_contract": [
+    "PROFILE.md",
+    "DOCTRINE.json",
+    "DECISION_TREE.json",
+    "AUTHORITY_SCOPE.json",
+    "MODEL_CARD.md",
+    "PROMPTS/base_system.md",
+    "PROMPTS/style_voice.md",
+    "EVALS/boundary_tests.md",
+    "EVALS/hallucination_tests.md",
+    "EVALS/compliance_language_tests.md"
+  ],
+  "activation_requirements": [
+    "All required CCACS files exist.",
+    "Schema validation passes.",
+    "Evaluation tests pass.",
+    "Activation attestation is logged.",
+    "A version tag is created."
+  ],
+  "registry_requirements": [
+    "Each character must be listed in characters/registry/CHARACTERS_INDEX.json.",
+    "Registry entry must include character_id, name, book of origin, status (dormant/active), canonical path, and version."
+  ],
+  "governance_implications": [
+    "Characters cannot be activated without passing validation and tests.",
+    "Activation requires attestation and version tags.",
+    "Registry ensures discoverability and auditability."
+  ],
+  "agent_requirements": [
+    "Load global safety rules first.",
+    "Use character doctrine as a binding constraint.",
+    "Refuse tasks outside authority scope.",
+    "Fail closed and remain dormant when uncertain."
+  ],
+  "schema_impact": [
+    "Finalize schemas for doctrine, decision trees, and authority scope.",
+    "Add a schema for character registry entries."
+  ]
+}
