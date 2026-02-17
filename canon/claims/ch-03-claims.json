@@ -1,0 +1,48 @@
+{
+  "chapter_id": "ch-03",
+  "title": "Canon, Doctrine, and the Truth Layer",
+  "version": "v0.1.1",
+  "tiers_of_truth": [
+    {
+      "tier": "Tier 1",
+      "name": "Canon",
+      "definition": "Executable truth. Allowed to cite and rely on."
+    },
+    {
+      "tier": "Tier 2",
+      "name": "Commentary",
+      "definition": "Helpful but not binding. Not executable truth unless extracted into canon."
+    },
+    {
+      "tier": "Tier 3",
+      "name": "Untrusted",
+      "definition": "External or missing. Not in canon or lacks canon-approved sourcing."
+    }
+  ],
+  "required_canon_files": [
+    "canon/CANON_INDEX.json",
+    "canon/GLOSSARY.md",
+    "canon/DOCTRINE.md",
+    "canon/INTERPRETIVE_RULES.md",
+    "canon/claims/*.json"
+  ],
+  "doctrine_definition": "Rules governing how truth is used and how actions are taken: refusal patterns, escalation triggers, moral constraints, compliance guardrails, and anti-fabrication rules.",
+  "core_principles": [
+    "Canon is the truth layer; doctrine is the behavior layer.",
+    "Agents must not treat narrative as executable truth.",
+    "Claims convert chapters into machine-readable infrastructure.",
+    "Interpretive rules prevent improvisation under ambiguity.",
+    "Activation requires canon + tests + version tags."
+  ],
+  "governance_implications": [
+    "Canon updates require versioning and changelog entries.",
+    "Major changes require attestation logging.",
+    "Characters cannot become agents without passing the canon gate."
+  ],
+  "agent_requirements": [
+    "Cite canon only.",
+    "If information is missing: respond 'Not found in canon.'",
+    "Never invent definitions or sources.",
+    "Escalate conflicts or out-of-scope requests."
+  ]
+}
