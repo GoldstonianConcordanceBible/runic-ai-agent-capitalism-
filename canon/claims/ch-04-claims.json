@@ -1,0 +1,72 @@
+{
+  "chapter_id": "ch-04",
+  "title": "The Blackbook Workflow",
+  "version": "v0.1.3",
+  "core_principles": [
+    "Blackbook converts writing into infrastructure.",
+    "Claims are the bridge from narrative to canon.",
+    "Schema validation is the canon gate.",
+    "Evals prevent drift and enforce boundaries.",
+    "Version tags create stable, citable releases."
+  ],
+  "pipeline_steps": [
+    {
+      "step": 1,
+      "name": "Write (Narrative)",
+      "description": "Write the chapter as a human-readable narrative.",
+      "artifacts": ["manuscript/chapters/ch-XX-title.md"]
+    },
+    {
+      "step": 2,
+      "name": "Extract (Claims)",
+      "description": "Convert chapter conclusions into structured, testable claims.",
+      "artifacts": ["canon/claims/ch-XX-claims.json"]
+    },
+    {
+      "step": 3,
+      "name": "Validate (Schema)",
+      "description": "Validate claims against the claims schema before treating them as canon.",
+      "artifacts": ["schemas/claims.schema.json"]
+    },
+    {
+      "step": 4,
+      "name": "Test (Evals)",
+      "description": "Add or update evaluation tests for agents and characters to enforce boundaries and prevent drift.",
+      "artifacts": ["characters/<name>/EVALS/", "agents/<name>/EVALS/"]
+    },
+    {
+      "step": 5,
+      "name": "Version (Changelog + Tag)",
+      "description": "Document what changed and create an immutable snapshot via a version tag.",
+      "artifacts": ["CHANGELOG.md", "vX.Y.Z tag"]
+    },
+    {
+      "step": 6,
+      "name": "Release (Stable State)",
+      "description": "Mark a stable state that can be referenced as production-ready.",
+      "artifacts": ["GitHub Release (optional)"]
+    }
+  ],
+  "canon_gate_requirements": [
+    "Chapter file exists (manuscript/chapters/ch-XX-title.md).",
+    "Claims file exists (canon/claims/ch-XX-claims.json).",
+    "Claims validate against schema (schemas/claims.schema.json).",
+    "Relevant eval tests exist (or are explicitly marked N/A).",
+    "CHANGELOG.md updated.",
+    "Version tag created."
+  ],
+  "governance_implications": [
+    "Canon changes must be versioned and logged.",
+    "Activation requires passing schema validation and eval tests.",
+    "Contributors must follow the Blackbook workflow."
+  ],
+  "agent_requirements": [
+    "Treat non-canon material as unknown.",
+    "Use validated claims as truth anchors.",
+    "Refuse activation if tests fail."
+  ],
+  "schema_impact": [
+    "Add schemas for character doctrine, decision trees, and authority scope.",
+    "Expand CANON_INDEX.json to register chapter claims artifacts."
+  ]
+}
