@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character Spec",
+  "type": "object",
+  "required": ["character_id", "version"],
+  "properties": {
+    "character_id": { "type": "string" },
+    "version": { "type": "string" },
+    "core_values": { "type": "array", "items": { "type": "string" } },
+    "non_negotiables": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}
