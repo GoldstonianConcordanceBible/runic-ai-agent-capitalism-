@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Authority Scope",
+  "type": "object",
+  "required": ["version", "can_do", "cannot_do"],
+  "properties": {
+    "version": { "type": "string" },
+    "can_do": { "type": "array", "items": { "type": "string" } },
+    "cannot_do": { "type": "array", "items": { "type": "string" } },
+    "escalation_trigger": { "type": "string" }
+  },
+  "additionalProperties": true
+}
